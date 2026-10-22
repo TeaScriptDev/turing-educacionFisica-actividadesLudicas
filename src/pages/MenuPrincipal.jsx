@@ -1,11 +1,12 @@
 import { estudiantes } from "../data/estudiantes"
 import { Link } from "react-router-dom"
+import './MenuPrincipal.css'
 
 function MenuPrincipal () {
     return(
-        <>
-            <div className="">
-                <span>Educación Física</span>
+        <div className="contenido-menu">
+            <div className="contenido-centrado">
+                <span className="etiqueta">Educación Física</span>
                 <h1>Actividades Lúdicas</h1>
                 <p>Ingresar a...</p>
 
@@ -23,7 +24,7 @@ function MenuPrincipal () {
                     ))
                 }
             </div>
-        </>
+        </div>
     )
 }
 
