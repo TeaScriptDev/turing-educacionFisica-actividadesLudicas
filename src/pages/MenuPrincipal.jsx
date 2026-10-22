@@ -13,6 +13,7 @@ function MenuPrincipal () {
                     estudiantes.map((estudiante) => (
                         <button>
                             {estudiante.nombre}
+                            <i class="fa-solid fa-arrow-right-long"></i>
                             <div className="oculto">
                                 <img src={estudiante.imagen} alt={"perfil de " + estudiante.nombre} />
                                 {/* <Link to="/">Entrar</Link> */}
