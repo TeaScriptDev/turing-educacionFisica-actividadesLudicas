@@ -1,4 +1,5 @@
 import { estudiantes } from "../data/estudiantes"
+import { Link } from "react-router-dom"
 
 function MenuPrincipal () {
     return(
@@ -10,7 +11,14 @@ function MenuPrincipal () {
 
                 {
                     estudiantes.map((estudiante) => (
-                        <button>{estudiante.nombre}</button>
+                        <button>
+                            {estudiante.nombre}
+                            <div className="oculto">
+                                <img src={estudiante.imagen} alt={"perfil de " + estudiante.nombre} />
+                                {/* <Link to="/">Entrar</Link> */}
+                                <button>Entrar</button>
+                            </div>
+                        </button>
                     ))
                 }
             </div>
