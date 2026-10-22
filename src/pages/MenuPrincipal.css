@@ -1,0 +1,25 @@
+.contenido-menu {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente en la pantalla */
+    align-items: center;     /* Centra verticalmente en la pantalla */
+    height: 100dvh;
+}
+
+/* 2. Centra los elementos que están dentro de esta caja */
+.contenido-centrado {
+    display: flex;
+    flex-direction: column;  /* Apila los elementos verticalmente (uno debajo de otro) */
+    justify-content: center; /* Centra el contenido verticalmente dentro de la caja */
+    align-items: center;     /* Centra el contenido horizontalmente dentro de la caja */
+    gap: 15px;               /* Espacio uniforme entre los elementos internos */
+    
+    border: 1px solid #000;
+    width: 700px;
+    height: 340px;
+}
+
+.etiqueta {
+    background-color: var(--color-celeste);
+    border-radius: 10px;
+    padding: 5px 15px;
+}
