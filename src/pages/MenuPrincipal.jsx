@@ -77,7 +77,9 @@ function MenuPrincipal() {
                                                 src={estudiante.imagen}
                                                 alt={"perfil de " + estudiante.nombre}
                                             />
-                                            <button className="boton-entrar">Entrar</button>
+                                            <Link to={`/estudiante/${estudiante.nombre}`} className="boton-entrar">
+                                                Entrar
+                                            </Link>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
