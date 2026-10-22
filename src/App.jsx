@@ -1,8 +1,10 @@
 import './App.css'
+import MenuPrincipal from './pages/MenuPrincipal'
 
 function App() {
   return (
     <>
+      <MenuPrincipal />
     </>
   )
 }
