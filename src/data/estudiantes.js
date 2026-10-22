@@ -7,7 +7,8 @@ export const estudiantes = [
             calentamientoArticular: "",
             calentamientoGeneral: "",
             coreografia: ''
-        }
+        },
+        reflexionPersonal: ""
     },
     {
         nombre: "Jehicop",
@@ -17,6 +18,7 @@ export const estudiantes = [
             calentamientoArticular: "",
             calentamientoGeneral: "",
             coreografia: ''
-        }
+        },
+        reflexionPersonal: ""
     }
 ]
