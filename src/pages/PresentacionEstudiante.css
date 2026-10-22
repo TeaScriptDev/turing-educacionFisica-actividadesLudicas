@@ -1,0 +1,299 @@
+.contenedor-presentacion {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: var(--color-blanco);
+  padding: 40px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ---------- Blobs decorativos ---------- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob-top-left {
+  width: 260px;
+  height: 260px;
+  top: -100px;
+  left: -100px;
+  background: var(--color-amarillo);
+  opacity: 0.16;
+}
+
+.blob-top-right {
+  width: 240px;
+  height: 240px;
+  top: -80px;
+  right: -90px;
+  background: var(--color-celeste);
+  opacity: 0.16;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado-presentacion {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.enlace-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-azul);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.enlace-volver:hover {
+  opacity: 1;
+}
+
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: color-mix(in srgb, var(--color-amarillo) 25%, white);
+  color: var(--color-azul);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.etiqueta i {
+  color: var(--color-rojo);
+}
+
+.bloque-titulo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.avatar-estudiante {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-celeste);
+  box-shadow: 0 6px 16px rgba(27, 73, 101, 0.15);
+}
+
+.titulo {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-azul);
+  margin-bottom: 4px;
+}
+
+.subrayado {
+  position: absolute;
+  left: 4%;
+  bottom: -4px;
+  width: 70%;
+  height: 8px;
+  background: var(--color-amarillo);
+  border-radius: 999px;
+  opacity: 0.8;
+  z-index: -1;
+  transform: rotate(-1deg);
+}
+
+.subtitulo {
+  color: color-mix(in srgb, var(--color-azul) 60%, white);
+  font-size: 0.95rem;
+}
+
+/* ---------- Secciones ---------- */
+.lista-secciones {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tarjeta-seccion {
+  background: var(--color-blanco);
+  border-radius: 24px;
+  padding: 22px;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 24px rgba(27, 73, 101, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tarjeta-seccion.color-amarillo {
+  border-color: color-mix(in srgb, var(--color-amarillo) 55%, white);
+}
+
+.tarjeta-seccion.color-celeste {
+  border-color: color-mix(in srgb, var(--color-celeste) 55%, white);
+}
+
+.tarjeta-seccion.color-rojo {
+  border-color: color-mix(in srgb, var(--color-rojo) 55%, white);
+}
+
+.encabezado-seccion {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.numero-seccion {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-blanco);
+}
+
+.color-amarillo .numero-seccion {
+  background: var(--color-amarillo);
+  color: var(--color-azul);
+}
+
+.color-celeste .numero-seccion {
+  background: var(--color-celeste);
+}
+
+.color-rojo .numero-seccion {
+  background: var(--color-rojo);
+}
+
+.encabezado-seccion h2 {
+  color: var(--color-azul);
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+
+.encabezado-seccion p {
+  color: color-mix(in srgb, var(--color-azul) 55%, white);
+  font-size: 0.88rem;
+}
+
+/* ---------- Caja de video ---------- */
+.caja-video {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-amarillo .caja-video {
+  background: color-mix(in srgb, var(--color-amarillo) 20%, white);
+}
+
+.color-celeste .caja-video {
+  background: color-mix(in srgb, var(--color-celeste) 16%, white);
+}
+
+.color-rojo .caja-video {
+  background: color-mix(in srgb, var(--color-rojo) 14%, white);
+}
+
+.etiqueta-vista-previa {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-azul);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.video-estudiante {
+  width: 100%;
+  max-height: 320px;
+  border-radius: 18px;
+}
+
+.video-pendiente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 30px 0;
+  color: color-mix(in srgb, var(--color-azul) 65%, white);
+  font-size: 0.85rem;
+}
+
+.boton-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-azul);
+  color: var(--color-blanco);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(27, 73, 101, 0.25);
+}
+
+.pie-seccion {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--color-azul) 55%, white);
+}
+
+/* ---------- Reflexión personal ---------- */
+.tarjeta-reflexion {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  background: color-mix(in srgb, var(--color-azul) 6%, white);
+  border-radius: 20px;
+  padding: 20px 24px;
+}
+
+.tarjeta-reflexion h2 {
+  color: var(--color-azul);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.tarjeta-reflexion p {
+  color: color-mix(in srgb, var(--color-azul) 70%, white);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
