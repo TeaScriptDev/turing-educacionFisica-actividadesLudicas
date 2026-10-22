@@ -54,7 +54,7 @@ function MenuPrincipal() {
                                     whileHover={{ scale: 1.04 }}
                                     whileTap={{ scale: 0.97 }}
                                 >
-                                    <span>{estudiante.nombre}</span>
+                                    <span>{estudiante.nombre} {estudiante.apellido}</span>
                                     <motion.span
                                         className="icono-flecha"
                                         animate={{ rotate: abierto ? 90 : 0 }}
