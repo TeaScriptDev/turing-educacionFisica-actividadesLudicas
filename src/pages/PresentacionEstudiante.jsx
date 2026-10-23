@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { estudiantes } from '../data/estudiantes'
 import './PresentacionEstudiante.css'
+import Error404 from './Error404'
+import { useEffect, useRef } from 'react'
 
 const secciones = [
   {
@@ -36,17 +38,72 @@ function PresentacionEstudiante() {
     (est) => est.nombre.toLowerCase() === (nombre || "").toLowerCase()
   )
 
+  const audioRef = useRef(null)
+
+  const fadeAudio = (audioElement, inicioVol, finVol, duracion, callback) => {
+    if (!audioElement) return
+    const pasos = 20
+    const intervaloTiempo = duracion / pasos
+    const cambioVolumen = (finVol - inicioVol) / pasos
+
+    let actualVol = inicioVol
+    audioElement.volume = Math.max(0, Math.min(1, actualVol))
+
+    const intervalo = setInterval(() => {
+      actualVol += cambioVolumen
+      if (
+        (cambioVolumen > 0 && actualVol >= finVol) ||
+        (cambioVolumen < 0 && actualVol <= finVol)
+      ) {
+        audioElement.volume = Math.max(0, Math.min(1, finVol))
+        clearInterval(intervalo)
+        if (callback) callback()
+      } else {
+        audioElement.volume = Math.max(0, Math.min(1, actualVol))
+      }
+    }, intervaloTiempo)
+  }
+
+  useEffect(() => {
+    if (!estudiante || !estudiante.music) return
+
+    const audio = new Audio(estudiante.music)
+    audio.loop = true
+    audio.volume = 0
+    audioRef.current = audio
+
+    audio.play().then(() => {
+      fadeAudio(audio, 0, 0.3, 2000)
+    }).catch((err) => {
+      console.log("La reproducción automática fue bloqueada por el navegador:", err)
+    })
+
+    return () => {
+      audio.pause()
+      audioRef.current = null
+    }
+  }, [estudiante])
+
+  const handleVideoPlay = () => {
+    const audio = audioRef.current
+    if (audio && !audio.paused) {
+      fadeAudio(audio, audio.volume, 0, 1000, () => {
+        audio.pause()
+      })
+    }
+  }
+
+  const handleVideoPauseOrEnd = () => {
+    const audio = audioRef.current
+    if (audio) {
+      audio.play().then(() => {
+        fadeAudio(audio, 0, 0.3, 1500)
+      }).catch((err) => console.log(err))
+    }
+  }
+
   if (!estudiante) {
-    return (
-      <div className="contenedor-presentacion">
-        <div className="no-encontrado">
-          <p>No se encontró al estudiante.</p>
-          <Link to="/" className="enlace-volver">
-            <i className="fa-solid fa-arrow-left-long"></i> Volver al menú
-          </Link>
-        </div>
-      </div>
-    )
+    return <Error404 />
   }
 
   return (
@@ -112,6 +169,9 @@ function PresentacionEstudiante() {
                   className="video-estudiante"
                   src={estudiante.videosUrl[seccion.clave]}
                   controls
+                  onPlay={handleVideoPlay}
+                  onPause={handleVideoPauseOrEnd}
+                  onEnded={handleVideoPauseOrEnd}
                 />
               ) : (
                 <div className="video-pendiente">

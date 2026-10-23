@@ -8,7 +8,8 @@ export const estudiantes = [
             calentamientoGeneral: "",
             coreografia: ''
         },
-        reflexionPersonal: ""
+        reflexionPersonal: "",
+        music: "/music-dilan.mp3"
     },
     {
         nombre: "Jehicop",
@@ -19,6 +20,7 @@ export const estudiantes = [
             calentamientoGeneral: "",
             coreografia: ''
         },
-        reflexionPersonal: ""
+        reflexionPersonal: "",
+        music: "/music-jehicop.mp3"
     }
 ]
