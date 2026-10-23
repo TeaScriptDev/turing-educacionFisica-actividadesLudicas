@@ -21,6 +21,6 @@ export const estudiantes = [
             coreografia: ''
         },
         reflexionPersonal: "",
-        music: ""
+        music: "/music-jehicop.mp3"
     }
 ]
