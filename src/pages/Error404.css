@@ -1,0 +1,188 @@
+.contenedor-404 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: var(--color-blanco);
+  padding: 24px;
+}
+
+/* ---------- Blobs decorativos ---------- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob-top-left {
+  width: 300px;
+  height: 300px;
+  top: -110px;
+  left: -110px;
+  background: var(--color-rojo);
+  opacity: 0.16;
+}
+
+.blob-top-right {
+  width: 260px;
+  height: 260px;
+  top: -90px;
+  right: -90px;
+  background: #8b7ff0;
+  opacity: 0.14;
+}
+
+.blob-bottom-left {
+  width: 260px;
+  height: 260px;
+  bottom: -100px;
+  left: -100px;
+  background: var(--color-celeste);
+  opacity: 0.14;
+}
+
+.blob-bottom-right {
+  width: 280px;
+  height: 280px;
+  bottom: -110px;
+  right: -100px;
+  background: var(--color-amarillo);
+  opacity: 0.16;
+}
+
+/* ---------- Contenido central ---------- */
+.contenido-404 {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  max-width: 440px;
+}
+
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: color-mix(in srgb, var(--color-rojo) 16%, white);
+  color: var(--color-azul);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.etiqueta i {
+  color: var(--color-rojo);
+}
+
+/* ---------- 404 carita llorando ---------- */
+.numero-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--color-azul);
+  line-height: 1;
+}
+
+.boca-404 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-rojo);
+}
+
+.lagrima {
+  position: absolute;
+  top: 58%;
+  width: 7px;
+  height: 16px;
+  background: var(--color-celeste);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0.9;
+  animation: caer 1.8s ease-in-out infinite;
+}
+
+.lagrima-izq {
+  left: 2px;
+  animation-delay: 0s;
+}
+
+.lagrima-der {
+  right: 2px;
+  animation-delay: 0.6s;
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+
+.subtitulo-404 {
+  color: color-mix(in srgb, var(--color-azul) 60%, white);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+/* ---------- Marco del GIF, estilo infantil ---------- */
+.marco-gif {
+  width: 220px;
+  height: 220px;
+  border-radius: 28px;
+  padding: 6px;
+  background: linear-gradient(135deg,
+      var(--color-amarillo),
+      var(--color-celeste),
+      var(--color-rojo));
+  box-shadow: 0 10px 24px rgba(27, 73, 101, 0.18);
+}
+
+.gif-404 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 4px dashed var(--color-blanco);
+  background: color-mix(in srgb, var(--color-celeste) 10%, white);
+}
+
+/* ---------- Botón volver ---------- */
+.boton-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  text-decoration: none;
+  background: var(--color-azul);
+  color: var(--color-blanco);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  padding: 12px 24px;
+  box-shadow: 0 6px 16px rgba(27, 73, 101, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.boton-volver:hover {
+  transform: translateY(-2px);
+}

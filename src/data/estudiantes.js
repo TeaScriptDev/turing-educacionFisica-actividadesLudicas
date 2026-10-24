@@ -2,21 +2,25 @@ export const estudiantes = [
     {
         nombre: "Dilan",
         apellido: "Solorzano",
-        imagen: "",
+        imagen: "https://avatars.githubusercontent.com/u/230013094?v=4",
         videosUrl: {
             calentamientoArticular: "",
             calentamientoGeneral: "",
             coreografia: "/coreografia_final.mkv"
-        }
+        },
+        reflexionPersonal: "",
+        music: "/music-dilan.mp3"
     },
     {
         nombre: "Jehicop",
         apellido: "Vicente",
-        imagen: "",
+        imagen: "https://avatars.githubusercontent.com/u/288810319?v=4",
         videosUrl: {
             calentamientoArticular: "",
             calentamientoGeneral: "",
             coreografia: "coreografia_final.mkv"
-        }
+        },
+        reflexionPersonal: "",
+        music: "/music-jehicop.mp3"
     }
 ]
