@@ -6,7 +6,7 @@ export const estudiantes = [
         videosUrl: {
             calentamientoArticular: "",
             calentamientoGeneral: "",
-            coreografia: ''
+            coreografia: "/coreografia_final.mkv"
         }
     },
     {
@@ -16,7 +16,7 @@ export const estudiantes = [
         videosUrl: {
             calentamientoArticular: "",
             calentamientoGeneral: "",
-            coreografia: ''
+            coreografia: "coreografia_final.mkv"
         }
     }
 ]
