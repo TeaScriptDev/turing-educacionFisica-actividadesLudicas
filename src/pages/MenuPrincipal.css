@@ -1,25 +1,220 @@
 .contenido-menu {
+    position: relative;
     display: flex;
-    justify-content: center; /* Centra horizontalmente en la pantalla */
-    align-items: center;     /* Centra verticalmente en la pantalla */
+    justify-content: center;
+    align-items: center;
     height: 100dvh;
+    overflow: hidden;
+    background: var(--color-blanco);
 }
 
-/* 2. Centra los elementos que están dentro de esta caja */
+/* ---------- Blobs decorativos (esquinas, como en la referencia) ---------- */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blob-top-left {
+    width: 320px;
+    height: 320px;
+    top: -120px;
+    left: -120px;
+    background: var(--color-rojo);
+    opacity: 0.18;
+}
+
+.blob-top-right {
+    width: 280px;
+    height: 280px;
+    top: -90px;
+    right: -100px;
+    background: #8b7ff0;
+    opacity: 0.16;
+}
+
+.blob-bottom-left {
+    width: 300px;
+    height: 300px;
+    bottom: -130px;
+    left: -110px;
+    background: var(--color-celeste);
+    opacity: 0.15;
+}
+
+.blob-bottom-right {
+    width: 280px;
+    height: 280px;
+    bottom: -110px;
+    right: -100px;
+    background: var(--color-amarillo);
+    opacity: 0.18;
+}
+
+/* ---------- Contenedor central ---------- */
 .contenido-centrado {
+    position: relative;
+    z-index: 1;
     display: flex;
-    flex-direction: column;  /* Apila los elementos verticalmente (uno debajo de otro) */
-    justify-content: center; /* Centra el contenido verticalmente dentro de la caja */
-    align-items: center;     /* Centra el contenido horizontalmente dentro de la caja */
-    gap: 15px;               /* Espacio uniforme entre los elementos internos */
-    
-    border: 1px solid #000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
     width: 700px;
-    height: 340px;
+    max-width: 90vw;
+    padding: 48px 32px;
 }
 
 .etiqueta {
-    background-color: var(--color-celeste);
-    border-radius: 10px;
-    padding: 5px 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: color-mix(in srgb, var(--color-celeste) 18%, white);
+    color: var(--color-azul);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    padding: 6px 16px;
+}
+
+.etiqueta i {
+    color: var(--color-celeste);
+}
+
+.titulo {
+    position: relative;
+    display: inline-block;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--color-azul);
+    text-align: center;
+    margin: 4px 0;
+}
+
+.subrayado {
+    position: absolute;
+    left: 8%;
+    bottom: -6px;
+    width: 84%;
+    height: 10px;
+    background: var(--color-amarillo);
+    border-radius: 999px;
+    opacity: 0.8;
+    z-index: -1;
+    transform: rotate(-1deg);
+}
+
+.subtitulo {
+    color: color-mix(in srgb, var(--color-azul) 60%, white);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+/* ---------- Tarjetas de estudiantes ---------- */
+.lista-estudiantes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.tarjeta-estudiante {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.boton-estudiante {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+
+    border: none;
+    border-radius: 999px;
+    padding: 14px 20px 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(27, 73, 101, 0.12);
+    transition: box-shadow 0.25s ease;
+}
+
+.boton-estudiante.relleno {
+    background: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+.boton-estudiante.contorno {
+    background: var(--color-blanco);
+    color: var(--color-azul);
+    border: 2px solid var(--color-celeste);
+    box-shadow: 0 4px 12px rgba(46, 196, 182, 0.15);
+}
+
+.boton-estudiante.activo {
+    box-shadow: 0 8px 20px rgba(27, 73, 101, 0.2);
+}
+
+.icono-flecha {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.boton-estudiante.relleno .icono-flecha {
+    background: rgba(247, 255, 247, 0.18);
+}
+
+.boton-estudiante.contorno .icono-flecha {
+    background: color-mix(in srgb, var(--color-celeste) 15%, white);
+}
+
+/* ---------- Panel expandible ---------- */
+.panel-estudiante {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 16px;
+    background: var(--color-blanco);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(27, 73, 101, 0.12);
+}
+
+.panel-estudiante img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--color-amarillo);
+}
+
+.boton-entrar {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 20px;
+    background: var(--color-rojo);
+    color: var(--color-blanco);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.boton-entrar:hover {
+    transform: translateY(-2px);
 }
