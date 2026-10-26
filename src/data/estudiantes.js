@@ -16,7 +16,7 @@ export const estudiantes = [
         apellido: "Vicente",
         imagen: "https://avatars.githubusercontent.com/u/288810319?v=4",
         videosUrl: {
-            calentamientoArticular: "",
+            calentamientoArticular: "/videos-jehicop/calentamiento-articular.mp4",
             calentamientoGeneral: "",
             coreografia: "/coreografia_final.mp4"
         },
