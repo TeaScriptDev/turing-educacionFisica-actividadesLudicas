@@ -4,7 +4,7 @@ export const estudiantes = [
         apellido: "Solorzano",
         imagen: "https://avatars.githubusercontent.com/u/230013094?v=4",
         videosUrl: {
-            calentamientoArticular: "",
+            calentamientoArticular: "/videos-dilan/calentamiento-articular.mp4",
             calentamientoGeneral: "",
             coreografia: "/coreografia_final.mp4"
         },
